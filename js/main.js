@@ -42,7 +42,7 @@ function copyTextToClipboard(text) {
     });
 }
 
-window.onload = e => {
+window.addEventListener('load', (e) => {
     document.querySelector("body").classList.remove("no-js");
     const cursor = document.querySelector('#mouse');
 
@@ -138,42 +138,7 @@ window.onload = e => {
 
 
     // Popups
-    document.querySelectorAll(".popup").forEach((popup) => {
-        const close = document.createElement("div");
-        close.classList.add("close", "interactable");
-        close.dataset.interactableType = "close";
-        close.addEventListener("click", () => {
-            togglePopup(popup.id);
-        });
-
-        popup.appendChild(close);
-    });
-
-    document.querySelectorAll("[data-toggle-popup]").forEach((toggle) => {
-        toggle.addEventListener("click", () => {
-            togglePopup(toggle.getAttribute("data-toggle-popup"));
-        });
-    });
-
-    if (document.querySelector('.popups')) {
-        document.querySelector('.popups').addEventListener('click', () => {
-            document.querySelectorAll('.popup').forEach(popup => {
-                popup.classList.remove('show');
-            });
-
-            document.querySelector('.popups').classList.remove('show');
-            document.body.classList.remove('popup-shown');
-        });
-    }
-
-    if (document.querySelector('.popup')) {
-        document.querySelectorAll('.popup').forEach(popup => {
-            popup.addEventListener('click', e => {
-                e.stopImmediatePropagation();
-                e.stopPropagation();
-            });
-        });
-    }
+    reloadPopups();
 
     window.oncontextmenu = e => {
         // right click
@@ -258,17 +223,64 @@ window.onload = e => {
             item.classList.add('has-link');
         }
     });
+});
+
+function reloadPopups() {
+    document.querySelectorAll(".popup").forEach((popup) => {
+        const close = document.createElement("div");
+        close.classList.add("close", "interactable");
+        close.dataset.interactableType = "close";
+        close.addEventListener("click", () => {
+            togglePopup(popup.id);
+        });
+
+        if (!popup.querySelector(".close")) {
+            popup.appendChild(close);
+        }
+    });
+
+    document.querySelectorAll("[data-toggle-popup]").forEach((toggle) => {
+        if (toggle.onclick === null) {
+            toggle.addEventListener("click", () => {
+                togglePopup(toggle.getAttribute("data-toggle-popup"));
+            });
+        }
+    });
+
+    if (document.querySelector('.popups')) {
+        document.querySelector('.popups').addEventListener('click', () => {
+            document.querySelectorAll('.popup').forEach(popup => {
+                popup.classList.remove('show');
+            });
+
+            document.querySelector('.popups').classList.remove('show');
+            document.body.classList.remove('popup-shown');
+        });
+    }
+
+    if (document.querySelector('.popup')) {
+        document.querySelectorAll('.popup').forEach(popup => {
+            popup.addEventListener('click', e => {
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+            });
+        });
+    }
 }
 
 function togglePopup(id) {
-    document.getElementById(id).classList.toggle("show");
+    if (document.getElementById(id)) {
+        document.getElementById(id).classList.toggle("show");
+    }
 
-    if (document.getElementById(id).classList.contains("show")) {
-        document.body.classList.add('popup-shown');
-        document.querySelector('.popups').classList.add('show');
-    } else {
-        document.body.classList.remove('popup-shown');
-        document.querySelector('.popups').classList.remove('show');
+    if (document.getElementById(id)) {
+        if (document.getElementById(id).classList.contains("show")) {
+            document.body.classList.add('popup-shown');
+            document.querySelector('.popups').classList.add('show');
+        } else {
+            document.body.classList.remove('popup-shown');
+            document.querySelector('.popups').classList.remove('show');
+        }
     }
 }
 

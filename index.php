@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style/css/index.css">
 
     <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/splide.min.js"></script>
 </head>
 <body class="no-js">
@@ -42,86 +43,11 @@ include_once('php/elements/noscript.php');
     </section>
 
     <section id="design">
-        <div class="popups">
-            <div class="popup" id="design1">
-                <h3>Design #1</h3>
-                <span class="subline">Über den Kunden / Zweck</span>
-
-                <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam autem blanditiis,
-                    debitis deleniti, dolor doloremque dolorum eos et illum incidunt inventore iste minima
-                    molestiae obcaecati porro qui ullam voluptates.
-                </p>
-
-                <div class="image_previews">
-                    <div class="image_preview">
-                        <img src="https://picsum.photos/seed/x1/300/200" alt="Design #1 Preview 1">
-                    </div>
-                    <div class="image_preview">
-                        <img src="https://picsum.photos/seed/x2/300/200" alt="Design #1 Preview 2">
-                    </div>
-                    <div class="image_preview">
-                        <img src="https://picsum.photos/seed/x3/300/200" alt="Design #1 Preview 3">
-                    </div>
-                </div>
-
-                <a class="text-button interactable" data-interactable-type="link">Projekt anzeigen</a>
-            </div>
-
-            <div class="popup" id="design2">
-                <h3>Design #2</h3>
-                <span class="subline">Über den Kunden / Zweck</span>
-
-                <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam autem blanditiis,
-                    debitis deleniti, dolor doloremque dolorum eos et illum incidunt inventore iste minima
-                    molestiae obcaecati porro qui ullam voluptates.
-                </p>
-
-                <div class="image_previews">
-                    <div class="image_preview">
-                        <img src="https://picsum.photos/seed/x4/300/200" alt="Design #2 Preview 1">
-                    </div>
-                    <div class="image_preview">
-                        <img src="https://picsum.photos/seed/x5/300/200" alt="Design #2 Preview 2">
-                    </div>
-                    <div class="image_preview">
-                        <img src="https://picsum.photos/seed/x6/300/200" alt="Design #2 Preview 3">
-                    </div>
-                </div>
-
-                <a class="text-button interactable" data-interactable-type="link">Projekt anzeigen</a>
-            </div>
-
-            <div class="popup" id="design3">
-                <h3>Design #3</h3>
-                <span class="subline">Über den Kunden / Zweck</span>
-
-                <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam autem blanditiis,
-                    debitis deleniti, dolor doloremque dolorum eos et illum incidunt inventore iste minima
-                    molestiae obcaecati porro qui ullam voluptates.
-                </p>
-
-                <div class="image_previews">
-                    <div class="image_preview">
-                        <img src="https://picsum.photos/seed/x7/300/200" alt="Design #3 Preview 1">
-                    </div>
-                    <div class="image_preview">
-                        <img src="https://picsum.photos/seed/x8/300/200" alt="Design #3 Preview 2">
-                    </div>
-                    <div class="image_preview">
-                        <img src="https://picsum.photos/seed/x9/300/200" alt="Design #3 Preview 3">
-                    </div>
-                </div>
-
-                <a class="text-button interactable" data-interactable-type="link">Projekt anzeigen</a>
-            </div>
-        </div>
+        <div class="popups"></div>
 
         <h2>Projekte</h2>
         <p>
-            Hier findest du eine Auswahl meiner Projekte. Klicke auf ein Projekt, um mehr Informationen zu erhalten.
+            Hier findest du eine Auswahl meiner Projekte. Klicke auf ein Projekt, um mehr Informationen zu erhalten. Als kleinen spaßigen Sidefact: Die Popups werden komplett per JS generiert. Im Quelltext existieren nur die einzelnen Slides des Sliders.
         </p>
 
         <div class="no-js-element"></div>
@@ -129,76 +55,28 @@ include_once('php/elements/noscript.php');
             <div class="splide__track">
                 <ul class="splide__list">
                     <li class="splide__slide project-card">
-                        <h3>Design #1</h3>
-                        <span class="subline">Über den Kunden / Zweck</span>
+                        <h3>Fliesenleger Website</h3>
+                        <span class="subline">Layout für <a class="interactable" data-interactable-type="external_link" href="https://www.faszination-fliesen.de/" target="_blank">Faszination Fliesen</a> [Umsetzung steht aus]</span>
 
                         <p class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam autem blanditiis,
-                            debitis deleniti, dolor doloremque dolorum eos et illum incidunt inventore iste minima
-                            molestiae obcaecati porro qui ullam voluptates.
+                            <strong>Briefing:</strong>
+                            Die aktuelle Onepage soll modernisiert und in eine Website umstrukturiert werden.
+                            Dabei sollen die Farben übernommen werden.
                         </p>
 
                         <div class="image_previews">
-                            <div class="image_preview">
-                                <img src="https://picsum.photos/seed/x1/300/200" alt="Design #1 Preview 1">
+                            <div class="image_preview" data-image-description="<strong>Header:</strong> Für den Header hat sich der Kunde ein breites Header-Bild gewünscht, um jedoch dennoch grundlegende Informationen und einen CTA-Button unterzubringen, habe ich die linke Sektion hinzugefügt. Dadurch sieht der Header außerdem etwas weniger 08/15 und somit ansprechender aus.">
+                                <img src="images/projekte/faszination-fliesen/nachher-1.png" alt="Header">
                             </div>
-                            <div class="image_preview">
-                                <img src="https://picsum.photos/seed/x2/300/200" alt="Design #1 Preview 2">
+                            <div class="image_preview" data-image-description="<strong>Über uns:</strong> Die Über uns-Sektion habe ich zweispaltig umgesetzt. Das hat es mir ermöglicht diesen Abschnitt zu unterteilen in: Den vom Kunden gewünschten Text, sowie eine schnellübersicht über die Eigenschaften, die das Unternehmen ausmacht – ohne viel gerede um den heißen Brei.">
+                                <img src="images/projekte/faszination-fliesen/nachher-2.png" alt="Über uns">
                             </div>
-                            <div class="image_preview">
-                                <img src="https://picsum.photos/seed/x3/300/200" alt="Design #1 Preview 3">
-                            </div>
-                        </div>
-
-                        <span class="text-button interactable" data-interactable-type="view" data-toggle-popup="design1">Ansehen</span>
-                    </li>
-                    <li class="splide__slide project-card">
-                        <h3>Design #2</h3>
-                        <span class="subline">Über den Kunden / Zweck</span>
-
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam autem blanditiis,
-                            debitis deleniti, dolor doloremque dolorum eos et illum incidunt inventore iste minima
-                            molestiae obcaecati porro qui ullam voluptates.
-                        </p>
-
-                        <div class="image_previews">
-                            <div class="image_preview">
-                                <img src="https://picsum.photos/seed/x4/300/200" alt="Design #2 Preview 1">
-                            </div>
-                            <div class="image_preview">
-                                <img src="https://picsum.photos/seed/x5/300/200" alt="Design #2 Preview 2">
-                            </div>
-                            <div class="image_preview">
-                                <img src="https://picsum.photos/seed/x6/300/200" alt="Design #2 Preview 3">
+                            <div class="image_preview" data-image-description="<strong>Leistungen:</strong> Auf der Onepage des Kunden wurden für die einzelnen Leistungspunkte sehr lange Texte verwendet, in denen sich Informationen teilweise gedoppelt haben, diese habe ich gekürzt und auf das Wesentliche reduziert.">
+                                <img src="images/projekte/faszination-fliesen/nachher-3.png" alt="Leistungen">
                             </div>
                         </div>
 
-                        <span class="text-button interactable" data-interactable-type="view" data-toggle-popup="design2">Ansehen</span>
-                    </li>
-                    <li class="splide__slide project-card">
-                        <h3>Design #3</h3>
-                        <span class="subline">Über den Kunden / Zweck</span>
-
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam autem blanditiis,
-                            debitis deleniti, dolor doloremque dolorum eos et illum incidunt inventore iste minima
-                            molestiae obcaecati porro qui ullam voluptates.
-                        </p>
-
-                        <div class="image_previews">
-                            <div class="image_preview">
-                                <img src="https://picsum.photos/seed/x7/300/200" alt="Design #3 Preview 1">
-                            </div>
-                            <div class="image_preview">
-                                <img src="https://picsum.photos/seed/x8/300/200" alt="Design #3 Preview 2">
-                            </div>
-                            <div class="image_preview">
-                                <img src="https://picsum.photos/seed/x9/300/200" alt="Design #3 Preview 3">
-                            </div>
-                        </div>
-
-                        <span class="text-button interactable" data-interactable-type="view" data-toggle-popup="design3">Ansehen</span>
+                        <span class="text-button interactable" data-interactable-type="view" data-toggle-popup="design1" data-project-link="https://www.figma.com/file/kPgZSKB6cHF54O14OIhOFn/240030_Website-Layout_Faszination-Fliesen">Ansehen</span>
                     </li>
                 </ul>
             </div>
