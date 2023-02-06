@@ -1,33 +1,73 @@
 $flaticon_portfolio-font: "flaticon_portfolio";
 
 @font-face {
-  font-family: $flaticon_portfolio-font;
-  src: url("../../fonts/flaticon_portfolio.ttf?fbe5ee669f832d7e23a5ddf5a6eef770") format("truetype"),
-  url("../../fonts/flaticon_portfolio.woff?fbe5ee669f832d7e23a5ddf5a6eef770") format("woff"),
-  url("../../fonts/flaticon_portfolio.woff2?fbe5ee669f832d7e23a5ddf5a6eef770") format("woff2"),
-  url("../../fonts/flaticon_portfolio.eot?fbe5ee669f832d7e23a5ddf5a6eef770#iefix") format("embedded-opentype"),
-  url("../../fonts/flaticon_portfolio.svg?fbe5ee669f832d7e23a5ddf5a6eef770#flaticon_portfolio") format("svg");
+    font-family: $flaticon_portfolio-font;
+    src: url("../../fonts/flaticon_portfolio.ttf?b38613d114cc7d934ff8ded193bc4bec") format("truetype"),
+url("../../fonts/flaticon_portfolio.woff?b38613d114cc7d934ff8ded193bc4bec") format("woff"),
+url("../../fonts/flaticon_portfolio.woff2?b38613d114cc7d934ff8ded193bc4bec") format("woff2"),
+url("../../fonts/flaticon_portfolio.eot?b38613d114cc7d934ff8ded193bc4bec#iefix") format("embedded-opentype"),
+url("../../fonts/flaticon_portfolio.svg?b38613d114cc7d934ff8ded193bc4bec#flaticon_portfolio") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
-  font-family: flaticon_portfolio !important;
-  font-style: normal;
-  font-weight: normal !important;
-  font-variant: normal;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: flaticon_portfolio !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 $flaticon_portfolio-map: (
-        "link": "\f101",
-        "play": "\f102",
+    "link": "\f101",
+    "play": "\f102",
+    "close": "\f103",
+    "github": "\f104",
+    "behance": "\f105",
+    "copy": "\f106",
+    "external": "\f107",
+    "broken-link": "\f108",
+    "download": "\f109",
+    "view": "\f10a",
+    "google": "\f10b",
+    "code": "\f10c",
 );
 
 .flaticon-link:before {
-  content: map-get($flaticon_portfolio-map, "link");
+    content: map-get($flaticon_portfolio-map, "link");
 }
-
 .flaticon-play:before {
-  content: map-get($flaticon_portfolio-map, "play");
+    content: map-get($flaticon_portfolio-map, "play");
+}
+.flaticon-close:before {
+    content: map-get($flaticon_portfolio-map, "close");
+}
+.flaticon-github:before {
+    content: map-get($flaticon_portfolio-map, "github");
+}
+.flaticon-behance:before {
+    content: map-get($flaticon_portfolio-map, "behance");
+}
+.flaticon-copy:before {
+    content: map-get($flaticon_portfolio-map, "copy");
+}
+.flaticon-external:before {
+    content: map-get($flaticon_portfolio-map, "external");
+}
+.flaticon-broken-link:before {
+    content: map-get($flaticon_portfolio-map, "broken-link");
+}
+.flaticon-download:before {
+    content: map-get($flaticon_portfolio-map, "download");
+}
+.flaticon-view:before {
+    content: map-get($flaticon_portfolio-map, "view");
+}
+.flaticon-google:before {
+    content: map-get($flaticon_portfolio-map, "google");
+}
+.flaticon-code:before {
+    content: map-get($flaticon_portfolio-map, "code");
 }

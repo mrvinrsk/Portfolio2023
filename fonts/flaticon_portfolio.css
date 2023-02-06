@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "flaticon_portfolio";
+    src: url("./flaticon_portfolio.ttf?def570a9500d7ed72cfc2c8208d4baf5") format("truetype"),
+url("./flaticon_portfolio.woff?def570a9500d7ed72cfc2c8208d4baf5") format("woff"),
+url("./flaticon_portfolio.woff2?def570a9500d7ed72cfc2c8208d4baf5") format("woff2"),
+url("./flaticon_portfolio.eot?def570a9500d7ed72cfc2c8208d4baf5#iefix") format("embedded-opentype"),
+url("./flaticon_portfolio.svg?def570a9500d7ed72cfc2c8208d4baf5#flaticon_portfolio") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_portfolio !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-link:before {
+    content: "\f101";
+}
+.flaticon-play:before {
+    content: "\f102";
+}
+.flaticon-close:before {
+    content: "\f103";
+}

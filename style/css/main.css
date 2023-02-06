@@ -1,6 +1,6 @@
 :root {
-  --transition-duration: .425s;
-  --transition-duration-short: .1s;
+  --transition-duration: .5s;
+  --transition-duration-short: .2s;
 }
 
 body.popup-shown {
@@ -21,7 +21,7 @@ body.popup-shown {
 
 .popups.show {
   opacity: 1;
-  backdrop-filter: blur(5px) brightness(0.8);
+  backdrop-filter: blur(5px) brightness(0.4);
   pointer-events: auto;
 }
 
@@ -30,13 +30,13 @@ body.popup-shown {
   z-index: 999;
   pointer-events: none;
   transition-duration: var(--transition-duration);
-  width: min(80%, 50rem);
-  max-height: 90%;
+  width: min(95%, 70rem);
+  max-height: 80%;
   overflow-y: auto;
-  background-color: #F3F3F3;
+  background-color: #d9d9de;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.08);
   opacity: 0;
-  transform: translate(-50%, calc(-50% + 40px));
+  transform: translate(-50%, -50%) scale(1.1);
   top: 50%;
   left: 50%;
   padding: 2rem;
@@ -44,7 +44,7 @@ body.popup-shown {
 }
 
 .popup.show {
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
@@ -67,21 +67,17 @@ body.popup-shown {
   transition-duration: var(--transition-duration-short);
 }
 
-.popup .close:hover::before {
+.popup .close::before {
   transform: rotate(-45deg);
 }
 
-.popup .close:hover::after {
+.popup .close::after {
   transform: rotate(45deg);
-}
-
-.popup .close::before, .popup .close::after {
-  transform: rotate(0);
 }
 
 @font-face {
   font-family: "flaticon_portfolio";
-  src: url("../../fonts/flaticon_portfolio.ttf?fbe5ee669f832d7e23a5ddf5a6eef770") format("truetype"), url("../../fonts/flaticon_portfolio.woff?fbe5ee669f832d7e23a5ddf5a6eef770") format("woff"), url("../../fonts/flaticon_portfolio.woff2?fbe5ee669f832d7e23a5ddf5a6eef770") format("woff2"), url("../../fonts/flaticon_portfolio.eot?fbe5ee669f832d7e23a5ddf5a6eef770#iefix") format("embedded-opentype"), url("../../fonts/flaticon_portfolio.svg?fbe5ee669f832d7e23a5ddf5a6eef770#flaticon_portfolio") format("svg");
+  src: url("../../fonts/flaticon_portfolio.ttf?b38613d114cc7d934ff8ded193bc4bec") format("truetype"), url("../../fonts/flaticon_portfolio.woff?b38613d114cc7d934ff8ded193bc4bec") format("woff"), url("../../fonts/flaticon_portfolio.woff2?b38613d114cc7d934ff8ded193bc4bec") format("woff2"), url("../../fonts/flaticon_portfolio.eot?b38613d114cc7d934ff8ded193bc4bec#iefix") format("embedded-opentype"), url("../../fonts/flaticon_portfolio.svg?b38613d114cc7d934ff8ded193bc4bec#flaticon_portfolio") format("svg");
 }
 i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   font-family: flaticon_portfolio !important;
@@ -89,6 +85,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   font-weight: normal !important;
   font-variant: normal;
   text-transform: none;
+  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -99,6 +96,46 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 
 .flaticon-play:before {
   content: "\f102";
+}
+
+.flaticon-close:before {
+  content: "\f103";
+}
+
+.flaticon-github:before {
+  content: "\f104";
+}
+
+.flaticon-behance:before {
+  content: "\f105";
+}
+
+.flaticon-copy:before {
+  content: "\f106";
+}
+
+.flaticon-external:before {
+  content: "\f107";
+}
+
+.flaticon-broken-link:before {
+  content: "\f108";
+}
+
+.flaticon-download:before {
+  content: "\f109";
+}
+
+.flaticon-view:before {
+  content: "\f10a";
+}
+
+.flaticon-google:before {
+  content: "\f10b";
+}
+
+.flaticon-code:before {
+  content: "\f10c";
 }
 
 /* poppins-300 - latin */
@@ -163,21 +200,25 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 
 body {
   min-height: 100vh;
-  background-color: #202020;
+  background-color: #19191a;
 }
 body:hover > #mouse {
   opacity: 1;
 }
 
-#mouse {
+html body.no-js #mouse {
+  display: none;
+}
+
+html body #mouse {
   position: fixed;
   z-index: 9999;
   left: 0;
   top: 0;
-  width: 42px;
-  height: 42px;
-  background-color: rgba(242, 242, 242, 0.15);
-  backdrop-filter: blur(5px);
+  width: 52px;
+  height: 52px;
+  background-color: rgba(150, 150, 153, 0.25);
+  backdrop-filter: blur(3px);
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
@@ -185,10 +226,17 @@ body:hover > #mouse {
   display: grid;
   place-items: center;
 }
-#mouse.interacting {
-  background-color: rgba(236, 122, 38, 0.55);
+html body #mouse.interacting {
+  background-color: rgba(206, 97, 13, 0.55);
+  backdrop-filter: blur(3px);
 }
-#mouse.hidden {
+html body #mouse.hidden {
+  opacity: 0 !important;
+}
+html body #mouse.clicked {
+  opacity: 25% !important;
+}
+html body #mouse.mobile {
   opacity: 0 !important;
 }
 
@@ -196,7 +244,7 @@ body:hover > #mouse {
   display: grid;
   place-items: center;
   font-size: 20px;
-  color: #f2f2f2;
+  color: #d9d9de;
   opacity: 0;
   transition: opacity 500ms ease;
 }
@@ -207,7 +255,7 @@ body:hover > #mouse {
 :root {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  color: #f2f2f2;
+  color: #d9d9de;
 }
 
 p, a, strong, span {
@@ -259,11 +307,149 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6, a, strong {
-  color: #ec7a26;
+  color: #ce610d;
+}
+
+.interactable {
+  cursor: pointer;
 }
 
 section {
   padding-block: 5%;
+}
+
+.no-script {
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  right: 0;
+  padding: 0.25em 0.75em;
+  background-color: rgba(217, 217, 222, 0.3);
+  backdrop-filter: blur(3px);
+  border-top-left-radius: 1vmin;
+}
+
+.no-js-element {
+  display: none;
+}
+
+body.no-js .no-js-element {
+  display: block;
+  border: 2px dashed #ce610d;
+  color: #ce610d;
+  font-size: 11vmin;
+  font-weight: 600;
+  text-align: center;
+  padding: 3vmin 1vmin;
+  border-radius: 1vmin;
+}
+body.no-js .no-js-element::before {
+  content: "Hier fehlt ein Element, bitte aktiviere JavaScript.";
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+body.no-js .no-js-element + * {
+  display: none;
+}
+
+.context_menu {
+  position: fixed;
+  z-index: 9998;
+  left: 0;
+  top: 0;
+  background-color: rgba(217, 217, 222, 0.5);
+  backdrop-filter: blur(10px);
+  transform: translateY(10px);
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* padding: .5rem 1rem; */
+  border-radius: 1vmin;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 500ms ease, transform 250ms ease-in-out;
+  display: grid;
+  place-items: center;
+}
+.context_menu .context_menu_group:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+.context_menu.shown {
+  pointer-events: all;
+  opacity: 1;
+  transform: translateY(0);
+}
+.context_menu .context_menu_item, .context_menu a {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  text-decoration: none;
+  overflow: hidden;
+  color: #19191a;
+}
+.context_menu .context_menu_item:is(.context_menu_item), .context_menu a:is(.context_menu_item) {
+  padding: 0.5em 0.75em;
+}
+.context_menu .context_menu_item.has-link, .context_menu a.has-link {
+  padding: 0;
+}
+.context_menu .context_menu_item a, .context_menu a a {
+  padding: 0.5em 0.75em;
+}
+.context_menu .context_menu_item > *:not(i), .context_menu a > *:not(i) {
+  width: 100%;
+}
+.context_menu .context_menu_item:has(a), .context_menu a:has(a) {
+  background-color: red;
+}
+.context_menu .context_menu_item:is(.context_menu_item)::before, .context_menu a:is(.context_menu_item)::before {
+  position: absolute;
+  content: "";
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgba(206, 97, 13, 0.5);
+  backdrop-filter: blur(10px);
+  height: 100%;
+  width: 0;
+  transition-duration: 250ms;
+}
+.context_menu .context_menu_item:is(.context_menu_item):hover::before, .context_menu a:is(.context_menu_item):hover::before {
+  width: 100%;
+}
+.context_menu .context_menu_item > *, .context_menu a > * {
+  z-index: 3;
+}
+.context_menu .context_menu_ctx {
+  display: none;
+}
+.context_menu .context_menu_ctx.shown {
+  display: block;
+}
+
+.splide__pagination {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+}
+
+.splide__pagination__page {
+  background-color: #969699;
+  border-radius: 0.25vmin;
+  width: 0.8em;
+  height: 0.6em;
+}
+.splide__pagination__page.is-active {
+  width: 2em;
+  background-color: #ce610d;
+}
+
+i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
+  display: block;
 }
 
 /*# sourceMappingURL=main.css.map */

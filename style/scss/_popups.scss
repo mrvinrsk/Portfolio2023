@@ -1,6 +1,8 @@
+@use "utils";
+
 :root {
-  --transition-duration: .425s;
-  --transition-duration-short: .1s;
+  --transition-duration: .5s;
+  --transition-duration-short: .2s;
 }
 
 body.popup-shown {
@@ -23,7 +25,7 @@ body.popup-shown {
 
 .popups.show {
   opacity: 1;
-  backdrop-filter: blur(5px) brightness(.8);
+  backdrop-filter: blur(5px) brightness(.4);
   pointer-events: auto;
 }
 
@@ -33,14 +35,14 @@ body.popup-shown {
   pointer-events: none;
   transition-duration: var(--transition-duration);
 
-  width: min(80%, 50rem);
-  max-height: 90%;
+  width: min(95%, 70rem);
+  max-height: 80%;
   overflow-y: auto;
-  background-color: #F3F3F3;
+  background-color: utils.$col-white;
   box-shadow: 0 3px 3px rgba(0 0 0 / 8%);
 
   opacity: 0;
-  transform: translate(-50%, calc(-50% + 40px));
+  transform: translate(-50%, -50%) scale(1.1);
   top: 50%;
   left: 50%;
 
@@ -49,7 +51,7 @@ body.popup-shown {
 }
 
 .popup.show {
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
@@ -72,14 +74,10 @@ body.popup-shown {
   transition-duration: var(--transition-duration-short);
 }
 
-.popup .close:hover::before {
+.popup .close::before {
   transform: rotate(-45deg);
 }
 
-.popup .close:hover::after {
+.popup .close::after {
   transform: rotate(45deg);
-}
-
-.popup .close::before, .popup .close::after {
-  transform: rotate(0);
 }

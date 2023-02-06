@@ -16,12 +16,23 @@ header {
 #design {
   .splide {
     border-radius: .5vmin;
+    margin-top: 2rem;
     background-color: utils.$col-white;
   }
 
   .splide__progress__bar {
     height: 5px;
     background: utils.$col-gray-light;
+  }
+}
+
+.project-card {
+  .image_preview:not(:first-child) {
+    display: none;
+
+    @media (min-width: 650px) {
+      display: block;
+    }
   }
 }
 
@@ -68,8 +79,13 @@ header {
     position: relative;
     box-sizing: border-box;
     font-weight: 600;
-    padding-inline: .5em;
-    padding-bottom: .1em;
+    padding-inline: .75em;
+    padding-bottom: .35em;
+    cursor: pointer;
+    color: utils.$col-black;
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
 
     &::after {
       position: absolute;
@@ -98,6 +114,17 @@ header {
       &::before {
         width: 100%;
       }
+    }
+  }
+}
+
+#design .popup {
+  .image_previews {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
