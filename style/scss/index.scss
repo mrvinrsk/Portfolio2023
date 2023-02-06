@@ -145,4 +145,10 @@ header {
       }
     }
   }
+
+  .image_info {
+    padding: .5rem 1rem;
+    border-radius: 1vmin;
+    background-color: darken(utils.$col-white, 5%);
+  }
 }

@@ -121,5 +121,10 @@ header .header_content h1 {
 #design .popup .image_previews .image_preview:hover {
   transform: translateY(-3px);
 }
+#design .popup .image_info {
+  padding: 0.5rem 1rem;
+  border-radius: 1vmin;
+  background-color: #cbcbd2;
+}
 
 /*# sourceMappingURL=index.css.map */
