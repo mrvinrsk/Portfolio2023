@@ -89,10 +89,17 @@ window.addEventListener('load', (e) => {
         }, 4500);
     }
 
+    const maxTrail = 50;
     const animateCursor = (e, interacting) => {
         const x = e.clientX - cursor.offsetWidth / 2, y = e.clientY - cursor.offsetHeight / 2;
         const keyframes = {
             transform: `translate(${x}px, ${y}px) scale(${interacting ? 2 : 1})`
+        }
+
+        if (!document.querySelector(".trails")) {
+            let trails = document.createElement("div");
+            trails.classList.add("trails");
+            document.body.appendChild(trails);
         }
 
         cursor.animate(keyframes, {
@@ -104,6 +111,8 @@ window.addEventListener('load', (e) => {
         } else {
             cursor.classList.remove('interacting');
         }
+
+
     }
 
     let timerId = null;
@@ -221,6 +230,74 @@ window.addEventListener('load', (e) => {
     document.querySelectorAll('.context_menu_item').forEach(item => {
         if (item.querySelector('a')) {
             item.classList.add('has-link');
+        }
+    });
+
+    const maxMoveX = window.innerWidth / 3;
+    const maxMoveY = window.innerHeight / 3;
+    // Animate all images in element .image_burst in random order and direction, slight rotation, consider not animating all images in the same direction, try to avoid overlapping
+    document.querySelectorAll('.image_burst img').forEach(img => {
+        let x = Math.floor(Math.random() * maxMoveX) - (maxMoveX / 2);
+        let y = Math.floor(Math.random() * maxMoveY) - (maxMoveY / 2);
+        let rotate = Math.floor(Math.random() * 10);
+
+
+        // Use keyframes, so that the animation can be done through .animate(), add opacity transition (0->1)
+        const keyframes = [
+            {transform: `translate(0, 0) rotate(0deg) scale(1)`, opacity: 0},
+            {transform: `translate(${x}px, ${y}px) rotate(${rotate}deg)`, opacity: 1}
+        ];
+
+        let options = {
+            duration: 250,
+            fill: 'forwards',
+            easing: 'ease-out'
+        };
+
+        img.animate(keyframes, options);
+    });
+
+
+    // Typing animation
+    document.querySelectorAll('.typing').forEach(el => {
+        if (el.hasAttribute("data-list")) {
+            let list = JSON.parse(el.dataset.list.replace(/'/g, '"'));
+
+            const delay = 2000; // 2 seconds
+
+            let index = 0;
+
+            function type() {
+                let text = list[index];
+                let i = 0;
+
+                function typeLetter() {
+                    if (i < text.length) {
+                        el.innerHTML = text.substring(0, i + 1) + '&nbsp;';
+                        i++;
+                        setTimeout(typeLetter, 90);
+                    } else {
+                        setTimeout(erase, delay);
+                    }
+                }
+
+                function erase() {
+                    if (i > 0) {
+                        el.innerHTML = text.substring(0, i - 1) + '&nbsp;';
+                        i--;
+                        setTimeout(erase, 40);
+                    } else {
+                        index = (index + 1) % list.length;
+                        setTimeout(type, Math.random() * delay);
+                    }
+                }
+
+                typeLetter();
+            }
+
+            type();
+        } else {
+            el.innerHTML = "Keine Liste (data-list) angegeben.";
         }
     });
 });

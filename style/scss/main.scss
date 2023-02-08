@@ -143,6 +143,16 @@ html body #mouse {
   }
 }
 
+html body .trail {
+  position: fixed;
+  z-index: 9998;
+
+  width: 16px;
+  height: 16px;
+  background-color: utils.$col-primary;
+  border-radius: 50%;
+}
+
 .mouse-icon {
   display: grid;
   place-items: center;

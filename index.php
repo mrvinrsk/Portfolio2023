@@ -25,6 +25,15 @@ include_once('php/elements/noscript.php');
 <header>
     <div class="header_content">
         <h1>Marvin Roßkothen</h1>
+        <p class="full-typing">Ich mache <span class="typing" data-list="['irgendwas mit Medien', 'brilliante Layouts', 'beeindruckendes JavaScript-Zeugs']"></span></p>
+    </div>
+
+    <div class="header_content image_burst">
+        <img src="https://picsum.photos/seed/a/200/300">
+        <img src="https://picsum.photos/seed/b/200/300">
+        <img src="https://picsum.photos/seed/c/200/300">
+        <img src="https://picsum.photos/seed/c/200/300">
+        <img src="https://picsum.photos/seed/c/200/300">
     </div>
 </header>
 

@@ -240,6 +240,15 @@ html body #mouse.mobile {
   opacity: 0 !important;
 }
 
+html body .trail {
+  position: fixed;
+  z-index: 9998;
+  width: 16px;
+  height: 16px;
+  background-color: #ce610d;
+  border-radius: 50%;
+}
+
 .mouse-icon {
   display: grid;
   place-items: center;
