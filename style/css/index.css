@@ -51,15 +51,21 @@ html header .image_burst img {
 }
 
 #design .splide {
-  border-radius: 0.5vmin;
   margin-top: 2rem;
-  background-color: #d9d9de;
 }
 #design .splide__progress__bar {
   height: 5px;
   background: #969699;
 }
 
+#design .splide, .project-card {
+  border-radius: 0.5vmin;
+  overflow: hidden;
+}
+
+.project-card {
+  background-color: #d9d9de;
+}
 .project-card .image_preview {
   display: none;
 }
@@ -108,6 +114,8 @@ html header .image_burst img {
   height: 100%;
   object-fit: contain;
   background-color: #cbcbd2;
+  display: grid;
+  place-items: center;
 }
 .project-card .text-button, #design .popup .text-button {
   position: relative;
@@ -160,8 +168,9 @@ html header .image_burst img {
   cursor: pointer;
   transition-duration: 250ms;
 }
-#design .popup .image_previews .image_preview:hover {
+#design .popup .image_previews .image_preview:hover, #design .popup .image_previews .image_preview.active {
   transform: translateY(-3px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 #design .popup .image_info {
   padding: 0.5rem 1rem;

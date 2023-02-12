@@ -55,9 +55,7 @@ html header .image_burst {
 
 #design {
   .splide {
-    border-radius: .5vmin;
     margin-top: 2rem;
-    background-color: utils.$col-white;
   }
 
   .splide__progress__bar {
@@ -66,7 +64,14 @@ html header .image_burst {
   }
 }
 
+#design .splide, .project-card {
+  border-radius: .5vmin;
+  overflow: hidden;
+}
+
 .project-card {
+  background-color: utils.$col-white;
+
   .image_preview {
     display: none;
 
@@ -119,6 +124,8 @@ html header .image_burst {
         height: 100%;
         object-fit: contain;
         background-color: darken(utils.$col-white, 5%);
+        display: grid;
+        place-items: center;
       }
     }
   }
@@ -180,8 +187,9 @@ html header .image_burst {
       cursor: pointer;
       transition-duration: 250ms;
 
-      &:hover {
+      &:hover, &.active {
         transform: translateY(-3px);
+        box-shadow: 0 3px 6px rgba(0 0 0 / 15%);
       }
     }
   }

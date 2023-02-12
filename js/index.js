@@ -34,6 +34,11 @@ window.addEventListener('load', (e) => {
 
         if (description) {
             preview.addEventListener('click', () => {
+                document.querySelectorAll('.popup .image_preview').forEach(preview => {
+                    preview.classList.remove('active');
+                });
+                preview.classList.add('active');
+
                 if (preview.dataset.imageDescription) {
                     description.innerHTML = preview.dataset.imageDescription;
                 } else {

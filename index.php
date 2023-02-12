@@ -87,6 +87,89 @@ include_once('php/elements/noscript.php');
 
                         <span class="text-button interactable" data-interactable-type="view" data-toggle-popup="design1" data-project-link="https://www.figma.com/file/kPgZSKB6cHF54O14OIhOFn/240030_Website-Layout_Faszination-Fliesen">Ansehen</span>
                     </li>
+
+                    <li class="splide__slide project-card">
+                        <h3>Bootswerft Visitenkarte</h3>
+                        <span class="subline">Visitenkarte für <a class="interactable" data-interactable-type="external_link" href="https://www.hatecke-bootswerft.de/" target="_blank">Hatecke Bootswerft</a></span>
+
+                        <p class="description">
+                            <strong>Briefing:</strong>
+                            Es sollten neue Visitenkarten in Anlehnung an die Website erstellt werden.
+                        </p>
+
+                        <div class="image_previews">
+                            <div class="image_preview"
+                                 data-image-description="<strong>Vorderseite:</strong> Als Anlehnung auf die Website des Kunden habe ich mich zur Verwendung von Wellen als Gestaltungselement entschieden, in welchen ich auf der Vorderseite eine Illustration eines Boots platziert habe, um den Bezug zum Bootswerft zu verstärken und neben der textlichen Darstellung ebenfalls visuell darzustellen.">
+                                <img src="images/projekte/hatecke-bootswerft/vorderseite.jpg" alt="Vorderseite">
+                            </div>
+
+                            <div class="image_preview"
+                                 data-image-description="<strong>Rückseite (Entwurf 1):</strong> Wie auch auf der Vorderseite habe ich hier erneut die Wellen als Gestaltungselement verwendet, um den Wiedererkennungswert der Website zu gewährleisten. Abgesehen davon habe ich hier einen QR-Code mir Verlinkung zur Website hinzugefügt, um es potentiellen Kunden einfacher zu machen an weitere Informationen zum Unternehmen zu gelangen.">
+                                <img src="images/projekte/hatecke-bootswerft/rueckseite.jpg" alt="Rückseite">
+                            </div>
+
+                            <div class="image_preview"
+                                 data-image-description="<strong>Rückseite (Entwurf 2):</strong> Als weiteren Entwurf habe ich dem Kunden eine helle Variante der Rückseite entworfen um eine Auswahl zu ermöglichen. Diese Variante wirkt durch die hellen Farben etwas freundlicher und einladender. Auch hier habe ich die Wellen, in etwas transparenter verwendet um den Wiedererkennungswert zu erhöhen, hier stehen diese allerdings nicht so stark im Vordergrund, wie bei den anderen Entwürfen.">
+                                <img src="images/projekte/hatecke-bootswerft/rueckseite-hell.jpg" alt="Rückseite (Hell)">
+                            </div>
+                        </div>
+
+                        <span class="text-button interactable" data-interactable-type="view" data-toggle-popup="design1" data-project-link="images/projekte/hatecke-bootswerft/visitenkarte.pdf">Ansehen</span>
+                    </li>
+
+                    <li class="splide__slide project-card">
+                        <h3>Landingpage Augenoptiker</h3>
+                        <span class="subline">Landingpage für <a class="interactable" data-interactable-type="external_link" href="https://augenoptik-nord.com/" target="_blank">Augenoptik Nord</a></span>
+
+                        <p class="description">
+                            <strong>Briefing:</strong>
+                            Hier sollte eine Landingpage erstellt werden, welche einen großen Wert auf die kleinen Kunden legt. Außerdem sollte die Messung der Sehstärke von Kindern im Vordergrund stehen.<br><br>
+                            Im allgemeinen habe ich mich für dieses Layout für den Wiedererkennungswert dazu entschieden, mein Layout am aktuellen Layout der <a class="interactable" target="_blank" data-interactable-type="external_link" href="https://augenoptik-nord.de/">Hauptwebsite des Kunden</a> auszurichten.
+                        </p>
+
+                        <div class="image_previews">
+                            <div class="image_preview"
+                                 data-image-description='<strong>Header:</strong> Der Kunde hatte sich ein passendes Bild für den Header gewünscht, welches auf voller Breite dargestellt wird. Daher habe ich mich für ein neugieriges Kind entschieden, welches den Kunden emotional ansprechen und außerdem dessen Blick in Richtung des Slogans "Messung der Sehstärke auch für unsere kleinen Kunden" lenken soll.'>
+                                <img src="images/projekte/augenoptik-nord/header.jpg" alt="Header">
+                            </div>
+
+                            <div class="image_preview"
+                                 data-image-description='<strong>Texte & Informationen:</strong> Wie bereits im Briefing erwähnt, habe ich mich bei der Gestaltung an der Website des Kunden ausgerichtet, dementsprechend kann ich hier nicht viel zur Gestaltung sagen.<br><br>Das Bild im Slider habe ich hier für das Portfolio nachträglich verwaschen, da ich nicht die Rechte an diesem Bild habe.'>
+                                <img src="images/projekte/augenoptik-nord/about.jpg" alt="Texte & Informationen">
+                            </div>
+
+                            <div class="image_preview"
+                                 data-image-description='<strong>Texte & Informationen:</strong> Auch beim Footer habe ich mich an dem auf der Website des Kunden orientiert, habe diesen allerdings etwas simplifiziert und die Zahlungsmethoden und sonstige Shop-Links entfernt, da diese Landingpage nur zu Informationszwecken dient.'>
+                                <img src="images/projekte/augenoptik-nord/footer.jpg" alt="Footer">
+                            </div>
+                        </div>
+
+                        <span class="text-button interactable" data-interactable-type="view" data-toggle-popup="design1" data-project-link="https://augenoptik-nord.com/">Ansehen</span>
+                    </li>
+
+                    <li class="splide__slide project-card">
+                        <h3>Website Maler</h3>
+                        <span class="subline">Landingpage für <a class="interactable" data-interactable-type="external_link" href="https://maler-heinecke.de/" target="_blank">Malerbetrieb Ingolf Heinecke</a></span>
+
+                        <p class="description">
+                            <strong>Briefing:</strong>
+                            Hier sollten die Inhalte übernommen und lediglich das Design der Website modernisiert werden.
+                        </p>
+
+                        <div class="image_previews">
+                            <div class="image_preview"
+                                 data-image-description='<strong>Header:</strong> Zu aller erst habe ich die Navigation vereinfacht und sticky am oberen Bildschirmrand platziert, wodurch der Header etwas aufgeräumter wirkt. Desweiteren habe ich ein Bild in den Header gesetzt, um einen Eindruck davon zu vermitteln, was man bei den Dienstleistungen des Kunden erwarten kann und habe den Slogan mit einem "Farbstreifen", welchen ich auf der gesamten Seite als Gestaltungselement verwendet habe, in den Anschnitt gesetzt.'>
+                                <img src="images/projekte/maler-heinecke/header.png" alt="Header">
+                            </div>
+
+                            <div class="image_preview"
+                                 data-image-description='<strong>CTA:</strong> Die alte Website beinhielt keine CTAs, was unter Umständen dazu führen kann, dass viele Kunden, die eigentlich Interesse an den Dienstleistungen gehabt hätten, den Auftraggeber dennoch nicht kontaktiert hätten, da es keine explizite Aufforderung dazu gab und die Seite so aussehen könnte, als wäre Sie nur zur Informationsbeschaffung gedacht.'>
+                                <img src="images/projekte/maler-heinecke/cta.png" alt="CTA">
+                            </div>
+                        </div>
+
+                        <span class="text-button interactable" data-interactable-type="view" data-toggle-popup="design1" data-project-link="">Ansehen</span>
+                    </li>
                 </ul>
             </div>
 
@@ -99,7 +182,8 @@ include_once('php/elements/noscript.php');
 
 <script>
     new Splide('.splide', {
-        arrows: false
+        arrows: false,
+        gap: '1rem'
     }).mount();
 </script>
 
